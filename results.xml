@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="5" failures="0" skipped="0" tests="5" time="0.428" timestamp="2024-02-28T11:16:11.808015" hostname="LAPTOP-JU3EKE4M"><testcase classname="tests.test_views" name="test_task_creation" time="0.060"><error message="failed on setup with &quot;AttributeError: 'SubRequest' object has no attribute 'funcargnames'&quot;">request = &lt;SubRequest '_live_server_helper' for &lt;Function test_task_creation&gt;&gt;
+
+    @pytest.fixture(autouse=True, scope='function')
+    def _live_server_helper(request):
+        """Helper to make live_server work, internal to pytest-django
+    
+        This helper will dynamically request the transactional_db fixture
+        for a tests which uses the live_server fixture.  This allows the
+        server and test to access the database without having to mark
+        this explicitly which is handy since it is usually required and
+        matches the Django behaviour.
+    
+        The separate helper is required since live_server can not request
+        transactional_db directly since it is session scoped instead of
+        function-scoped.
+        """
+&gt;       if 'live_server' in request.funcargnames:
+E       AttributeError: 'SubRequest' object has no attribute 'funcargnames'
+
+../../.py38/lib/python3.8/site-packages/pytest_django/fixtures.py:237: AttributeError</error></testcase><testcase classname="tests.test_views" name="test_task_update" time="0.001"><error message="failed on setup with &quot;AttributeError: 'SubRequest' object has no attribute 'funcargnames'&quot;">request = &lt;SubRequest '_live_server_helper' for &lt;Function test_task_update&gt;&gt;
+
+    @pytest.fixture(autouse=True, scope='function')
+    def _live_server_helper(request):
+        """Helper to make live_server work, internal to pytest-django
+    
+        This helper will dynamically request the transactional_db fixture
+        for a tests which uses the live_server fixture.  This allows the
+        server and test to access the database without having to mark
+        this explicitly which is handy since it is usually required and
+        matches the Django behaviour.
+    
+        The separate helper is required since live_server can not request
+        transactional_db directly since it is session scoped instead of
+        function-scoped.
+        """
+&gt;       if 'live_server' in request.funcargnames:
+E       AttributeError: 'SubRequest' object has no attribute 'funcargnames'
+
+../../.py38/lib/python3.8/site-packages/pytest_django/fixtures.py:237: AttributeError</error></testcase><testcase classname="tests.test_views" name="test_task_deletion" time="0.001"><error message="failed on setup with &quot;AttributeError: 'SubRequest' object has no attribute 'funcargnames'&quot;">request = &lt;SubRequest '_live_server_helper' for &lt;Function test_task_deletion&gt;&gt;
+
+    @pytest.fixture(autouse=True, scope='function')
+    def _live_server_helper(request):
+        """Helper to make live_server work, internal to pytest-django
+    
+        This helper will dynamically request the transactional_db fixture
+        for a tests which uses the live_server fixture.  This allows the
+        server and test to access the database without having to mark
+        this explicitly which is handy since it is usually required and
+        matches the Django behaviour.
+    
+        The separate helper is required since live_server can not request
+        transactional_db directly since it is session scoped instead of
+        function-scoped.
+        """
+&gt;       if 'live_server' in request.funcargnames:
+E       AttributeError: 'SubRequest' object has no attribute 'funcargnames'
+
+../../.py38/lib/python3.8/site-packages/pytest_django/fixtures.py:237: AttributeError</error></testcase><testcase classname="tests.test_views" name="test_task_completion" time="0.001"><error message="failed on setup with &quot;AttributeError: 'SubRequest' object has no attribute 'funcargnames'&quot;">request = &lt;SubRequest '_live_server_helper' for &lt;Function test_task_completion&gt;&gt;
+
+    @pytest.fixture(autouse=True, scope='function')
+    def _live_server_helper(request):
+        """Helper to make live_server work, internal to pytest-django
+    
+        This helper will dynamically request the transactional_db fixture
+        for a tests which uses the live_server fixture.  This allows the
+        server and test to access the database without having to mark
+        this explicitly which is handy since it is usually required and
+        matches the Django behaviour.
+    
+        The separate helper is required since live_server can not request
+        transactional_db directly since it is session scoped instead of
+        function-scoped.
+        """
+&gt;       if 'live_server' in request.funcargnames:
+E       AttributeError: 'SubRequest' object has no attribute 'funcargnames'
+
+../../.py38/lib/python3.8/site-packages/pytest_django/fixtures.py:237: AttributeError</error></testcase><testcase classname="tests.test_views" name="test_task_list" time="0.001"><error message="failed on setup with &quot;AttributeError: 'SubRequest' object has no attribute 'funcargnames'&quot;">request = &lt;SubRequest '_live_server_helper' for &lt;Function test_task_list&gt;&gt;
+
+    @pytest.fixture(autouse=True, scope='function')
+    def _live_server_helper(request):
+        """Helper to make live_server work, internal to pytest-django
+    
+        This helper will dynamically request the transactional_db fixture
+        for a tests which uses the live_server fixture.  This allows the
+        server and test to access the database without having to mark
+        this explicitly which is handy since it is usually required and
+        matches the Django behaviour.
+    
+        The separate helper is required since live_server can not request
+        transactional_db directly since it is session scoped instead of
+        function-scoped.
+        """
+&gt;       if 'live_server' in request.funcargnames:
+E       AttributeError: 'SubRequest' object has no attribute 'funcargnames'
+
+../../.py38/lib/python3.8/site-packages/pytest_django/fixtures.py:237: AttributeError</error></testcase></testsuite></testsuites>
