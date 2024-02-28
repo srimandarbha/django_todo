@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="65" it="0" lt="0" ct="47" ts="1709112711973" s="false" lb="main page hit" rc="Non HTTP response code: org.apache.http.NoHttpResponseException" rm="Non HTTP response message: 127.0.0.1:8000 failed to respond" tn="todo 1-1" dt="text" by="2068" sby="0" ng="1" na="1">
+  <java.net.URL>http://127.0.0.1:8000/</java.net.URL>
+</httpSample>
+<httpSample t="9" it="0" lt="0" ct="1" ts="1709112712052" s="false" lb="main page hit 2" rc="Non HTTP response code: org.apache.http.NoHttpResponseException" rm="Non HTTP response message: 127.0.0.1:8000 failed to respond" tn="todo 1-1" dt="text" by="2068" sby="0" ng="1" na="1">
+  <java.net.URL>http://127.0.0.1:8000/</java.net.URL>
+</httpSample>
+<httpSample t="6" it="0" lt="0" ct="0" ts="1709112712062" s="false" lb="main page hit 3" rc="Non HTTP response code: org.apache.http.NoHttpResponseException" rm="Non HTTP response message: 127.0.0.1:8000 failed to respond" tn="todo 1-1" dt="text" by="2068" sby="0" ng="1" na="1">
+  <java.net.URL>http://127.0.0.1:8000/</java.net.URL>
+</httpSample>
+
+</testResults>
