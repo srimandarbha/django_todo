@@ -10,11 +10,12 @@
   tasks:
     - name: install python-setuptools by yum
       yum:
-         name: python-setuptools
+         name: "{{item}}"
          state: present
          update_cache: yes
-      tags:
-        - deploy
+      with_items:
+         - "python-setuptools"
+         - "python-virtualenv"
 
     - name: Create directory app on opt
       file:
@@ -22,10 +23,9 @@
          state: "directory"
          recurse: "yes"
       with_items:
+         - "/opt/app/release/{{version}}"
          - "/opt/app/release"
-         - "/opt/app/current"
-      tags:
-        - deploy
+         - "/opt/app/backup"
          
     - name: Get app from nexus
       get_url:
@@ -36,19 +36,24 @@
 
     - name: unarchive app dump
       unarchive:
-         dest: /opt/app/release
-         src: /opt/app/backup/django_todo-{{version}}.tgz
+         src: "/opt/app/backup/{{app_name}}-{{version}}.tar"
+         dest: "/opt/app/release/{{version}}"
+         remote_src: yes
 
     - name: install python requirement
       pip: 
-         chdir: "/opt/app/release"
-         requirements: "/opt/app/release/master/requirements.txt"
+         chdir: "/opt/app/release/{{version}}"
+         requirements: "/opt/app/release/{{version}}/requirements.txt"
          virtualenv: "/opt/app/.demo"
          virtualenv_site_packages: yes
-      tags:
-        - deploy
+
+    - name: Create directory app on opt
+      file:
+         src: "/opt/app/release/{{version}}"
+         path: "/opt/app/current"
+         state: "link"
       
     - name: Run Migrations
       shell: 
         cmd: "/opt/app/.demo/bin/python manage.py migrate"
-        chdir: "/opt/app/release"
+        chdir: "/opt/app/current"
