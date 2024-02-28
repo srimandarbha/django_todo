@@ -12,10 +12,10 @@ config:
    sonarqube:
       token: "sonar"
       url: "test"
-      projectKey: "test"
+      projectKey: "toDo"
       jenkins_sonar_tool_client: 'sonar-scanner'
       jenkins_sonar_tool_server: 'sonar-scanner'
-      credentialsId: 
+      credentialsId: 'sonar' 
    ansible:
       host: "172.17.0.5"
       env: "PROD"
