@@ -11,7 +11,7 @@ config:
    app_name: 'django_todo'
    sonarqube:
       token: "sonar"
-      url: "test"
+      url: "http://sonarcube:9000"
       projectKey: "toDo"
       jenkins_sonar_tool_client: 'sonar-scanner'
       jenkins_sonar_tool_server: 'sonar-scanner'
