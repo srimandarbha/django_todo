@@ -32,6 +32,6 @@ config:
    nexus:
       nexus_user: 'deploy'
       nexus_pass: 'deploy'
-      nexus_server: 'http://172.17.0.2:8081'
+      nexus_server: 'http://nexus3:8081'
       nexus_server_apps: 'apps'
       credentialId: 
