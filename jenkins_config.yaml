@@ -8,8 +8,9 @@
 #       Deployment steps (supported):
 #         ansible - 
 config:
+   app_name: 'django_todo'
    sonarqube:
-      token: "test"
+      token: "sonar"
       url: "test"
       projectKey: "test"
       credentialsId: 
@@ -19,8 +20,16 @@ config:
       tests: false
       credentialsId: 
    jmeter:
-      bin_path: "bin/jmeter"
+      jmeter_install_base: "/var/jenkins_home/apache-jmeter-5.6.3"
+      jmeter_bin_path: "bin/jmeter"
       test_file: "basic_steps.xml"
       input_format: "xml"
       output_format:
       output_filename:
+      jmeter_addtl_args: 
+   nexus:
+      nexus_user: 'deploy'
+      nexus_pass: 'deploy'
+      nexus_server: 'http://172.17.0.2:8081'
+      nexus_server_apps: 'apps'
+      credentialId: 
