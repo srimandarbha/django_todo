@@ -24,7 +24,7 @@ config:
    jmeter:
       jmeter_install_base: "/var/jenkins_home/apache-jmeter-5.6.3"
       jmeter_bin_path: "bin/jmeter"
-      test_file: "basic_steps.xml"
+      test_file: "basic_test.jmx"
       input_format: "xml"
       output_format:
       output_filename:
