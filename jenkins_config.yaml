@@ -1,0 +1,26 @@
+---
+#       Supported steps:
+#         sonarqube -
+#         jmeter -
+#         maven - 
+#         pytest -
+#
+#       Deployment steps (supported):
+#         ansible - 
+config:
+   sonarqube:
+      token: "test"
+      url: "test"
+      projectKey: "test"
+      credentialsId: 
+   ansible:
+      host: "aap.prod.hsbc"
+      env: "PROD"
+      tests: false
+      credentialsId: 
+   jmeter:
+      bin_path: "bin/jmeter"
+      test_file: "basic_steps.xml"
+      input_format: "xml"
+      output_format:
+      output_filename:
