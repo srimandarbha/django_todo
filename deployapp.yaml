@@ -1,0 +1,54 @@
+---
+- hosts: all
+  vars:
+    app_name: 'django_todo'
+    version: '1.0'
+    nexus_repo_name: ''
+    nexus_user: 'deploy'
+    nexus_pass: 'deploy'
+    url_mode: 'http'
+  tasks:
+    - name: install python-setuptools by yum
+      yum:
+         name: python-setuptools
+         state: present
+         update_cache: yes
+      tags:
+        - deploy
+
+    - name: Create directory app on opt
+      file:
+         path: "{{item}}"
+         state: "directory"
+         recurse: "yes"
+      with_items:
+         - "/opt/app/release"
+         - "/opt/app/current"
+      tags:
+        - deploy
+         
+    - name: Get app from nexus
+      get_url:
+         url: "{{url_mode}}://{{nexus_repo_name}}/repository/apps/{{app_name}}/{{version}}/{{app_name}}-{{version}}.tgz"
+         dest: "/opt/app/backup"
+         url_username: "{{nexus_user}}"
+         url_password: "{{nexus_pass}}"
+
+    - name: unarchive app dump
+      unarchive:
+         dest: /opt/app/release
+         src: /opt/app/backup/django_todo-{{version}}.tgz
+
+    - name: install python requirement
+      pip: 
+         chdir: "/opt/app/release"
+         requirements: "/opt/app/release/master/requirements.txt"
+         virtualenv: "/opt/app/.demo"
+         virtualenv_site_packages: yes
+      tags:
+        - deploy
+      
+    - name: Run Migrations
+      shell: 
+        cmd: "/opt/app/.demo/bin/python manage.py migrate"
+        chdir: "/opt/app/release"
