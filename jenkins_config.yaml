@@ -13,9 +13,11 @@ config:
       token: "sonar"
       url: "test"
       projectKey: "test"
+      jenkins_sonar_tool_client: 'sonar-scanner'
+      jenkins_sonar_tool_server: 'sonar-scanner'
       credentialsId: 
    ansible:
-      host: "aap.prod.hsbc"
+      host: "172.17.0.5"
       env: "PROD"
       tests: false
       credentialsId: 
