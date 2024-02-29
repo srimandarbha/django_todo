@@ -29,7 +29,7 @@
          
     - name: Get app from nexus
       get_url:
-         url: "{{url_mode}}://{{nexus_repo_name}}/repository/apps/{{app_name}}/{{app_name}}-{{version}}.tgz"
+         url: "{{url_mode}}://{{nexus_repo_name}}/repository/apps/{{app_name}}/{{app_name}}-{{version}}.tar"
          dest: "/opt/app/backup"
          url_username: "{{nexus_user}}"
          url_password: "{{nexus_pass}}"
