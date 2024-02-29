@@ -1,5 +1,5 @@
 [all]
-alma-sshd ansible_host=localhost ansible_port=8022
+alma-sshd ansible_host=alma-sshd ansible_port=8022
 
 [all:vars]
 ansible_ssh_user=root
