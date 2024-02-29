@@ -57,3 +57,8 @@
       shell: 
         cmd: "/opt/app/.demo/bin/python manage.py migrate"
         chdir: "/opt/app/current"
+
+    - name: Start Application
+      shell: 
+        cmd: "nohup /opt/app/.demo/bin/python manage.py runserver &>/dev/null &"
+        chdir: "/opt/app/current"
