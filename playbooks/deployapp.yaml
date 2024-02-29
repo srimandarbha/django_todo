@@ -60,5 +60,5 @@
 
     - name: Start Application
       shell: 
-        cmd: "nohup /opt/app/.demo/bin/python manage.py runserver &>/dev/null &"
+        cmd: "bash run_server.sh"
         chdir: "/opt/app/current"
