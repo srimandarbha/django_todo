@@ -3,7 +3,7 @@
   vars:
     app_name: 'django_todo'
     version: '1.0'
-    nexus_repo_name: 'nexus2:8081'
+    nexus_repo_name: 'nexus3:8081'
     nexus_user: 'deploy'
     nexus_pass: 'deploy'
     url_mode: 'http'
